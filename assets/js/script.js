@@ -71,3 +71,6 @@ var answersObject = { // Object that holds correct answers.
             3: "All of the above"},  
     }
 };
+
+//Initialize the display timer at default value
+htmlTimeLeft.textContent = timeLeft;
