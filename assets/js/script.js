@@ -95,3 +95,21 @@ viewHighScoresBtnEl.addEventListener("click", function() { // View high scores
     window.alert(highScores);
 
 });
+
+submitScoreEl.addEventListener("click", function() { // Submit high scores
+    
+
+    var quizLocalStorage = "quiz";
+    var quizUserDetails = "";
+    var value = [];
+    
+    //If good input the value will be assign properly.
+    quizUserDetails = quizLocalStorage + enterInitialsTextArea.value 
+    value = [quizUserDetails,highScore] // Create an array for validation
+
+
+    // Add test entry @local storage in order to be able to get the lentgh of the local storage.
+    // If user clears the data at local storage the below code will not work unless there is at least on entry.
+    if (!localStorage.length) {
+        localStorage.setItem("test","test");
+    }
