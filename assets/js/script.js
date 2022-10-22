@@ -31,3 +31,13 @@ answer4BtnEl.style.display = 'none';
 submitScoreEl.style.display = 'none';
 answerCorrectWrong.style.display='none';
 enterInitialsTextArea.style.display='none';
+
+var questionsObject = { // Object that holds correct answers.
+    correct: { 
+        0 : "Commonly used datatypes DO NOT include?",
+        1 : "The condition statement if/else is enclosed with the following:",
+        2 : "Arrays can be used to store the following", // Button #4 for 
+        3 : "A very useful tool to debug arrays is:", // Button #3
+        4 : "Strings must be enclosed with:"
+    }
+};
