@@ -215,3 +215,55 @@ startQuizBtnEl.addEventListener("click", function() {
         checkTimes = 1; // Check timer for funciton patch.
     
      //debugger;
+
+ 
+     var timeInterval = setInterval(function() {
+
+        if (score === 1){ // For any wrong answer, remove a point
+            highScore -= 10;
+        }
+
+        score = 0; // move the score back to 0 to check for another wrong answer.
+
+        
+        if(timeLeft >= 1 && finalAnswerCheck !== 1) {
+            //Assign text content to the question from our object
+            questionDisplay.textContent = questionsObject.correct[questionNumber];
+            
+            questionDisplay.style.display= ""; // Allow the questions to be displayed
+            answer1BtnEl.style.display = ""; // Allow our buttons to appear
+            answer2BtnEl.style.display = "";
+            answer3BtnEl.style.display = "";
+            answer4BtnEl.style.display = "";
+
+            //Display asnwers to the question
+            answer1BtnEl.textContent = answersObject.answers[answerNumber][0];
+            answer2BtnEl.textContent = answersObject.answers[answerNumber][1];
+            answer3BtnEl.textContent = answersObject.answers[answerNumber][2];
+            answer4BtnEl.textContent = answersObject.answers[answerNumber][3];
+           
+            gridContainer.appendChild(questionDisplayEl);
+            gridContainer.appendChild(answer1BtnEl);
+            gridContainer.appendChild(finalScoreDisplayEl);
+            timeLeft -= 1;
+            htmlTimeLeft.textContent = timeLeft;
+            console.log("time left:" + timeLeft)
+            
+
+            answer1BtnEl.addEventListener("click", function() {
+
+                if (questionDisplay.textContent === "The condition statement if/else is enclosed with the following:" && answer1BtnEl.textContent === "Parentheses") {
+                    console.log("Correct");
+                   // timeLeft += 1; // Add a second for a correct answer as it will take one second to move to the next question
+                    questionNumber = 2; // Move to the next question which is the third questions
+                    answerNumber = 4;
+                    answerCorrectWrong.style.display="";
+                    answerCorrectWrong.textContent = "Correct!";
+                    answerCorrectWrong.style.borderTop = "solid #800080";
+                    answerCorrectWrongGrid.appendChild(answerCorrectWrong);
+                } else {
+
+                    //Assign wrong values based incorrect answers.
+
+
+     
